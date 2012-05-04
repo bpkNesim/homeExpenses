@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="documentParser"
+          class="sweethome.homeExpenses.server.service.parser.csvTransactionParser.BZWBK.TransactionParserCsvBZWBK">
+        <property name="fileName" value="src\main\resources\untouched.csv"/>
+        <property name="separator" value="|"/>
+    </bean>
+    
+    <bean id="bankAccountUpdater"
+          class="sweethome.homeExpenses.server.service.parser.csvTransactionParser.BZWBK.BankAccountUpdaterBZWBK"/>
+    
+    <bean id="categoryAssigner"
+          class="sweethome.homeExpenses.server.service.categoryAssigning.TransactionCategoryAssignerStatic"/>
+
+</beans>
